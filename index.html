@@ -81,6 +81,20 @@
         .popup-close:hover {
             color: #333;
         }
+
+        /* Стили для ошибок валидации */
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            display: none; /* Скрываем сообщения об ошибках по умолчанию */
+        }
+
+        input.invalid,
+        textarea.invalid {
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
@@ -117,12 +131,15 @@
                 <form id="myForm" action="#" method="post">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" placeholder="Ваше имя">
+                    <div class="error-message" id="name-error">Пожалуйста, введите ваше имя.</div>
 
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email" placeholder="Ваш email">
+                    <div class="error-message" id="email-error">Пожалуйста, введите корректный email.</div>
 
                     <label for="message">Сообщение:</label>
                     <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение"></textarea>
+                    <div class="error-message" id="message-error">Пожалуйста, введите сообщение.</div>
 
                     <button type="submit">Отправить</button>
                 </form>
@@ -144,26 +161,68 @@
     </div>
 
     <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Валидация имени
+            const nameInput = document.getElementById('name');
+            const nameError = document.getElementById('name-error');
+            if (nameInput.value.trim() === '') {
+                nameInput.classList.add('invalid');
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameInput.classList.remove('invalid');
+                nameError.style.display = 'none';
+            }
+
+            // Валидация email
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Простая проверка email
+            if (emailInput.value.trim() === '' || !emailRegex.test(emailInput.value)) {
+                emailInput.classList.add('invalid');
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailInput.classList.remove('invalid');
+                emailError.style.display = 'none';
+            }
+
+            // Валидация сообщения
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('message-error');
+            if (messageInput.value.trim() === '') {
+                messageInput.classList.add('invalid');
+                messageError.style.display = 'block';
+                isValid = false;
+            } else {
+                messageInput.classList.remove('invalid');
+                messageError.style.display = 'none';
+            }
+
+            return isValid;
+        }
+
         document.getElementById('myForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
-            // Здесь можно получить данные из формы, если нужно
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            if (validateForm()) {
+                // Форма прошла валидацию, можно отправлять данные
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
 
-            // Отправляем событие в Яндекс.Метрику
-            ym(102243084, 'reachGoal', 'form_submitted', {
-                name: name,
-                email: email,
-                message: message
-            });
 
-            // Показываем всплывающее окно
-            document.getElementById('popup').style.display = 'flex';
+                // Показываем всплывающее окно
+                document.getElementById('popup').style.display = 'flex';
 
-            // Очищаем форму (по желанию)
-            document.getElementById('myForm').reset();
+                // Очищаем форму (по желанию)
+                document.getElementById('myForm').reset();
+            } else {
+                // Форма не прошла валидацию, остаемся на странице и показываем ошибки
+                console.log("Форма не прошла валидацию");
+            }
         });
 
         // Закрытие всплывающего окна по нажатию на крестик
