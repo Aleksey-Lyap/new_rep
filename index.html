@@ -3,114 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        /* Стили для формы */
-        .text-form {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        .text-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .text-form input[type="text"],
-        .text-form textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box; /* Очень важно, чтобы padding не увеличивал ширину */
-        }
-
-        .text-form button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .text-form button:hover {
-            background-color: #3e8e41;
-        }
-
-        /* Стили для всплывающего окна */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            display: none; /* Скрыто по умолчанию */
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            position: relative; /* Для позиционирования кнопки закрытия */
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #888;
-        }
-
-        .popup-close:hover {
-            color: #333;
-        }
-
-        /* Стили для ошибок валидации */
-        .error-message {
-            color: red;
-            font-size: 0.8em;
-            margin-top: -5px;
-            margin-bottom: 10px;
-            display: none; /* Скрываем сообщения об ошибках по умолчанию */
-        }
-
-        input.invalid,
-        textarea.invalid {
-            border: 1px solid red;
-        }
-    </style>
-</head>
-<body>
+    <title>Мой тестовый сайт</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем файл стилей -->
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=102243084', 'ym');
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(102243084, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+        ym(102243084, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/102243084" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+</head>
+<body>
 
     <header>
         <h1>Добро пожаловать на мой тестовый сайт!</h1>
@@ -123,8 +36,29 @@
 
     <main>
         <section>
-            <h2>Это главная страница</h2>
-            <p>Здесь будет контент главной страницы.</p>
+            <div class="content-block">
+                <h2>Что такое веб-разработка?</h2>
+                <img src="https://via.placeholder.com/600x400/007BFF/FFFFFF?text=Web+Development" alt="Web Development">
+                <p>Веб-разработка — это процесс создания веб-сайтов и веб-приложений. Она включает в себя различные аспекты, такие как front-end разработка (клиентская часть), back-end разработка (серверная часть) и разработка баз данных. Front-end разработчики отвечают за внешний вид и интерактивность веб-сайта, используя HTML, CSS и JavaScript. Back-end разработчики занимаются серверной логикой, обработкой данных и взаимодействием с базами данных, используя языки программирования, такие как Python, Java, PHP и Node.js.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Изучение HTML</h2>
+                <img src="https://via.placeholder.com/600x400/28A745/FFFFFF?text=HTML" alt="HTML">
+                <p>HTML (HyperText Markup Language) — это язык разметки, который используется для создания структуры веб-страницы. Он состоит из набора элементов, которые определяют различные части контента, такие как заголовки, абзацы, изображения и ссылки. Изучение HTML является первым шагом в веб-разработке. Вы можете начать с изучения основных тегов и атрибутов, а затем перейти к более сложным концепциям, таким как семантическая разметка и доступность.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Основы CSS</h2>
+                <img src="https://via.placeholder.com/600x400/DC3545/FFFFFF?text=CSS" alt="CSS">
+                <p>CSS (Cascading Style Sheets) — это язык стилей, который используется для оформления веб-страниц. Он позволяет контролировать внешний вид элементов HTML, такие как цвет, шрифт, размер и расположение. CSS позволяет создавать красивые и привлекательные веб-сайты. Вы можете начать с изучения основных свойств CSS, а затем перейти к более сложным концепциям, таким как макеты, анимации и адаптивный дизайн.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Знакомство с JavaScript</h2>
+                <img src="https://via.placeholder.com/600x400/FFC107/000000?text=JavaScript" alt="JavaScript">
+                <p>JavaScript — это язык программирования, который используется для добавления интерактивности на веб-страницы. Он позволяет создавать динамические элементы, обрабатывать события и взаимодействовать с пользователем. JavaScript является мощным инструментом для веб-разработки. Вы можете начать с изучения основ JavaScript, а затем перейти к более сложным концепциям, таким как DOM, AJAX и фреймворки JavaScript.</p>
+            </div>
 
             <div class="text-form">
                 <h3>Текстовая форма</h3>
