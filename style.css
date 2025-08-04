@@ -58,16 +58,10 @@ footer {
     color: #333;
 }
 
-/* .content-block img {
-    max-width: 100px;
-    height: auto;
-    display: block; /* Убирает отступ снизу */
-    /* margin: 10px auto; Центрирует изображение */
-/* } */
 
 .content-block img {
-    width: 200px;  /*  Задайте желаемую ширину  */
-    height: 150px; /*  Задайте желаемую высоту  */
+    width: 2000px;  /*  Задайте желаемую ширину  */
+    height: 1500px; /*  Задайте желаемую высоту  */
     object-fit: cover; /* Важно!  Обрезает изображение, сохраняя пропорции */
     object-position: center; /* центрирует изображение в выделенной области */
   }
