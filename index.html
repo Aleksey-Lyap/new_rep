@@ -77,7 +77,7 @@
 
             <div class="text-form">
                 <h3>Текстовая форма</h3>
-                <form>
+                <form id="myForm" action="#" method="post">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" placeholder="Ваше имя">
 
@@ -91,6 +91,13 @@
                 </form>
             </div>
         </section>
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Предотвращаем перезагрузку страницы
+    
+                document.getElementById('myForm').reset();
+            });
+        </script>
     </main>
 
     <footer>
@@ -98,4 +105,3 @@
     </footer>
 </body>
 </html>
-w
