@@ -21,7 +21,7 @@
     ym(102243084, 'init', {webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     
     window.dataLayer = window.dataLayer || [];
-    
+
 </script>
 
 <noscript><div><img src="https://mc.yandex.ru/watch/102243084" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -53,27 +53,27 @@
 <div class="btn-group">
     <!-- Просмотр товара -->
     <button class="btn-view" onclick="dataLayer.push({'ecommerce':{'currencyCode':'RUB','detail':{'products':[p]}}}); console.log('view sent');">
-      1. Просмотр товара
+    Просмотр товара
     </button>
 
     <!-- Добавить в корзину -->
     <button class="btn-add" onclick="dataLayer.push({'ecommerce':{'currencyCode':'RUB','add':{'products':[{...p,quantity:1,list:'Каталог',position:1}]}}}); console.log('add sent');">
-      2. Добавить в корзину
+    Добавить в корзину
     </button>
 
     <!-- Покупка -->
     <button class="btn-buy" onclick="dataLayer.push({'ecommerce':{'currencyCode':'RUB','purchase':{'actionField':{'id':'TRX999', 'revenue': 800},'products':[{...p,quantity:1,list:'Заказ',position:1}]}}}); console.log('purchase sent');">
-      3. Покупка
+    Покупка
     </button>
 
     <!-- Удалить из корзины -->
     <button class="btn-remove" onclick="dataLayer.push({'ecommerce':{'currencyCode':'RUB','remove':{'products':[{...p,quantity:1,list:'Корзина',position:1}]}}}); console.log('remove sent');">
-      4. Удалить из корзины
+    Удалить из корзины
     </button>
 
     <!-- Пустая кнопка -->
     <button class="btn-empty" onclick="console.log('пустая кнопка нажата');">
-      5. Пустая кнопка
+    Пустая кнопка
     </button>
   </div>
 

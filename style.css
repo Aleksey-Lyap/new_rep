@@ -229,13 +229,13 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #444;
+  color: #dfd3d3;
   font-size: 15px;
   line-height: 1.4;
   transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #000;
+  color: #e15151;
   text-decoration: underline;   /* подчёркивание вместо фона — минимализм */
 }
