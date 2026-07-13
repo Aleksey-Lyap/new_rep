@@ -211,3 +211,31 @@ button:active:not(:disabled) {
 .btn-buy { background-color: #f59e0b; }
 .btn-remove { background-color: #ef4444; }
 .btn-empty { background-color: #6b7280; }
+
+
+nav {
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;                     /* расстояние между пунктами */
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #000;
+  text-decoration: underline;   /* подчёркивание вместо фона — минимализм */
+}
