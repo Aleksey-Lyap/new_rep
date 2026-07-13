@@ -206,11 +206,11 @@ button:active:not(:disabled) {
   transform: translateY(0) scale(0.98);
 }
 
-.btn-view { background-color: #3b82f6; }
-.btn-add { background-color: #10b981; }
-.btn-buy { background-color: #f59e0b; }
-.btn-remove { background-color: #ef4444; }
-.btn-empty { background-color: #6b7280; }
+.btn-view { background-color: #6e92cb; }
+.btn-add { background-color: #63d9b1eb; }
+.btn-buy { background-color: #e4b25d; }
+.btn-remove { background-color: #ea6262; }
+.btn-empty { background-color: #6b8395; }
 
 
 nav {
@@ -229,13 +229,13 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #dfd3d3;
+  color: #ffffff;
   font-size: 15px;
   line-height: 1.4;
   transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #e15151;
+  color: #f39272;
   text-decoration: underline;   /* подчёркивание вместо фона — минимализм */
 }
